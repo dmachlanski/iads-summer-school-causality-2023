@@ -8,15 +8,6 @@ institute: CSEE and MiSoC, University of Essex
 date: July 26th 2023
 ---
 
-#
-* Introduction
-* Motivation
-* Causality
-* Methods
-* Metrics
-* Conclusion
-
-\usebackgroundtemplate{}
 
 # Introduction
 
@@ -43,7 +34,7 @@ We are going to use the following:
 * scikit-learn (ML methods)
 * [EconML](https://github.com/microsoft/EconML) (CI estimators)
 * The usual ML stack (numpy, pandas, matplotlib)
-* Google Colab
+* Jupyter Notebooks
 
 ## A Machine Learning Perspective
 We will need the following:
@@ -72,6 +63,12 @@ You probably know all this by now -> we can do causal inference!
 
 # Motivation
 
+## The Ladder of Causation
+\begin{figure}
+  \centering
+  \includegraphics[trim={0 0 0 0},clip,width = 0.6\textwidth]{./graphics/ladder.png}
+\end{figure}
+
 ## Spurious Correlations
 \begin{figure}
   \centering
@@ -91,13 +88,13 @@ Credit: https://www.tylervigen.com/spurious-correlations
 ## Simpson's Paradox
 \begin{figure}
   \centering
-  \includegraphics[trim={0 0 0 50px},clip,width = 0.8\textwidth]{./graphics/paradox_all.png}
+  \includegraphics[trim={0 0 0 50pt},clip,width = 0.8\textwidth]{./graphics/paradox_all.png}
 \end{figure}
 
 ## Simpson's Paradox
 \begin{figure}
   \centering
-  \includegraphics[trim={0 0 0 50px},clip,width = 0.8\textwidth]{./graphics/paradox_groups.png}
+  \includegraphics[trim={0 0 0 50pt},clip,width = 0.8\textwidth]{./graphics/paradox_groups.png}
 \end{figure}
 
 ## Takeaway
@@ -207,6 +204,24 @@ CI
 * Treated ($t=1$) and control ($t=0$) groups often have different distributions
 * We learn from one distribution, but make predictions for a different one!
 * The usual IID assumption no longer applies here
+::::
+
+:::
+
+## More on ML vs. CI
+::: columns
+
+:::: column
+ML
+
+* What should be the price of this house?
+::::
+
+:::: column
+CI
+
+* How the price of this house will change if we modify it in a certain way?
+* What would be the cheapest investment in the house that would increase its value the most?​
 ::::
 
 :::
@@ -499,12 +514,6 @@ effect_pred = xl.effect(x_test)
 ```
 \normalsize
 
-## X-Learner - Intuition
-\begin{figure}
-  \centering
-  \includegraphics[trim={0 0 0 0},clip,width = 0.45\textwidth]{./graphics/xlearner.png}
-\end{figure}
-
 # Metrics
 
 ## Evaluation
@@ -536,6 +545,15 @@ Examples:
 * $\epsilon_{PEHE}$
 * $\epsilon_{ATT}$
 * $\mathcal{R}_{pol}$
+
+## Model and Hyperparameter Selection
+* Absolutely mandatory [](https://arxiv.org/abs/2303.01412)
+* Do NOT use defaults
+* Search over:
+  * Hyperparameters (values and types)
+  * Base learners (regressors and classifiers)
+  * Causal estimators
+* The more the better, at the cost of increased compute
 
 ## Predictions
 Let us denote $\hat{y}_t^{(i)}$ as **predicted** outcome for individual $(i)$ that received treatment $t$. Then, our predicted ITE and ATE can be written as:
@@ -620,7 +638,7 @@ This lecture builds heavily on the materials from *Introduction to Machine Learn
 
 ## References
 
-\footnotesize
+\scriptsize
 
 * J. M. Robins, A. Rotnitzky, and L. P. Zhao, ‘Estimation of Regression Coefficients When Some Regressors are not Always Observed’, Journal of the American Statistical Association, vol. 89, no. 427, pp. 846–866, Sep. 1994.
 * U. Shalit, F. D. Johansson, and D. Sontag, ‘Estimating individual treatment effect: generalization bounds and algorithms’, in International Conference on Machine Learning, Jul. 2017, pp. 3076–3085.
@@ -629,6 +647,7 @@ This lecture builds heavily on the materials from *Introduction to Machine Learn
 * S. R. Künzel, J. S. Sekhon, P. J. Bickel, and B. Yu, ‘Meta-learners for Estimating Heterogeneous Treatment Effects using Machine Learning’, Proc Natl Acad Sci USA, vol. 116, no. 10, pp. 4156–4165, Mar. 2019.
 * R. Guo, L. Cheng, J. Li, P. R. Hahn, and H. Liu, ‘A Survey of Learning Causality with Data: Problems and Methods’, ACM Comput. Surv., vol. 53, no. 4, p. 75:1-75:37, Jul. 2020.
 * L. Yao, Z. Chu, S. Li, Y. Li, J. Gao, and A. Zhang, ‘A Survey on Causal Inference’, arXiv:2002.02770 [cs, stat], Feb. 2020.
+* D. Machlanski, S. Samothrakis, and P. Clarke, ‘Hyperparameter Tuning and Model Evaluation in Causal Effect Estimation’. arXiv, Mar. 02, 2023.
 
 ## What's next?
 * Onto the practical parts

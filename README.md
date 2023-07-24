@@ -1,15 +1,22 @@
 # Machine Learning for Causal Inference from Observational Data (26th July 2023)
 
 ## Agenda
-- Welcome and Introduction to the Course
-- Lecture: Causal Inference using Machine Learning
-- Short Break
-- Lecture: (continued)
-- Lunch Break
-- Practical Part 1: Guided Example
-- Short Break
-- Practical Part 2: Do It Yourself
-- Consolidation, Discussion and Next Steps
+- 9:30-10:30
+	- Welcome and Introduction to the Course
+	- Lecture: Causal Inference using Machine Learning
+- 10:30-11:00
+	- Short Break
+- 11:00-12:30
+	- Lecture: (continued)
+- 12:30-13:30
+	- Lunch Break
+- 13:30-15:00
+	- Practical Part 1: Guided Example
+- 15:00-15:30
+	- Short Break
+- 15:30-17:00
+	- Practical Part 2: Do It Yourself
+	- Consolidation, Discussion and Next Steps
 
 ## Practical Parts
 You will need a Python environment to complete the programming parts. The easiest option is to use Google Colab as it is ready to use straightaway. Alternatively, you can set up a local Python environment and run the code locally on your computer. If this is your choice, the latest [Anaconda](https://www.anaconda.com/download) is recommended. Simply install it and you are ready to go. Instructions will be provided during the course about how to use Google Colab/Anaconda.
